@@ -23,7 +23,7 @@ class PublicUserApiTest(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    def test_create_user_sucess(self):
+    def test_create_user_success(self):
         """Test Creating a user is sucessful"""
         payload = {
             'email': 'test@example.com',
