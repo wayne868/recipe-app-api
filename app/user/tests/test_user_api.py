@@ -108,7 +108,7 @@ class PublicUserApiTests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
-class PrivateUserApiTsets(TestCase):
+class PrivateUserApiTests(TestCase):
     """Test API Request that reqire authentication."""
 
     def setUp(self):
@@ -118,7 +118,7 @@ class PrivateUserApiTsets(TestCase):
             name='Test Name',
         )
         self.client = APIClient()
-        self.client.force_authentication(user=self.user)
+        self.client.force_authenticate(user=self.user)
 
     def test_retrieve_profile_success(self):
         """Test retrieving profile for logged in user."""
